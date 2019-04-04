@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Javascript Calculator</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=PT+Sans"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
-  <body>
-    <div class="calculator">
-      <div class="calculator__display">
-        <div
-          class="calculator__display--preview js-calculator__display--preview"
-        ></div>
-        <div class="calculator__display--results"></div>
-      </div>
-      <div class="calculator__body">
-        <div class="calculator__body--operators">
-          <button class="button operator operator--plus">
-            <i class="fas fa-plus"></i>
-          </button>
-          <button class="button operator js-operator--minus">
-            <i class="fas fa-plus"></i>
-          </button>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Javascript Calculator</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <div class="calculator">
+    <div class="calculator__display">
+      <span class="calculator__display--secondary js-calculator__display--secondary">2250 + 38</span>
+      <div class="calculator__display--main">
+        <i class="fas fa-equals"></i>
+        <span class="results">2288</span>
       </div>
     </div>
-    <script src="assets/js/app.js"></script>
-  </body>
+    <div class="calculator__body">
+      <button class="button button--operator js-operator--plus"><i class="fas fa-plus"></i></button>
+      <button class="button button--operator js-operator--minus"><i class="fas fa-minus"></i></button>
+      <button class="button button--operator js-operator--multiply"><i class="fas fa-times"></i></button>
+      <button class="button button--operator js-operator--divide"><i class="fas fa-divide"></i></button>
+      <button class="button button--number">7</button>
+      <button class="button button--number">8</button>
+      <button class="button button--number">9</button>
+      <button class="button button--modify js-modify-clear">C</button>
+      <button class="button button--number">4</button>
+      <button class="button button--number">5</button>
+      <button class="button button--number">6</button>
+      <button class="button button--modify js-modify-back"><i class="fas fa-backspace"></i></button>
+      <button class="button button--number">1</button>
+      <button class="button button--number">2</button>
+      <button class="button button--number">3</button>
+      <button class="button button--equals js-operator--equals"><i class="fas fa-equals"></i></button>
+      <button class="button button--number button--number--0">0</button>
+      <button class="button button--number">.</button>
+    </div>
+  </div>
+  <script src="assets/js/app.js"></script>
+</body>
+
 </html>

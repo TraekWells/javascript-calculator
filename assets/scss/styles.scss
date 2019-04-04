@@ -1,0 +1,147 @@
+// Variables
+$color-primary: hsla(183, 87, 35, 1);
+$color-primary-light: hsla(183, 59, 69, 1);
+$color-secondary: hsla(24, 79, 50, 1);
+$color-gradient-light: hsla(183, 100, 75, 0.33);
+$color-gradient-dark: hsla(183, 55, 56, 0.7);
+$color-text: #333333;
+$color-text-light: #999999;
+$color-white: #ffffff;
+$font-stack: "PT Sans", sans-serif;
+
+// Placeholders
+%align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%background-gradient {
+  background-image: linear-gradient(
+    to bottom right,
+    $color-gradient-light,
+    $color-gradient-dark
+  );
+}
+
+%border-radius {
+  border-radius: 1.5rem;
+}
+
+%box-shadow {
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.11);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-stack;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  @extend %background-gradient;
+  @extend %align-center;
+}
+
+.calculator {
+  @extend %border-radius;
+  @extend %box-shadow;
+  overflow: hidden;
+  background-color: $color-white;
+  min-width: 36rem;
+
+  &__display {
+    padding: 2.5rem;
+
+    &--secondary {
+      color: $color-text-light;
+      display: block;
+      font-size: 2rem;
+      text-align: right;
+    }
+
+    &--main {
+      color: $color-text;
+      display: flex;
+      align-items: center;
+
+      i {
+        color: $color-text-light;
+        font-size: 2rem;
+      }
+
+      .results {
+        text-align: right;
+        flex-grow: 1;
+        font-size: 5rem;
+      }
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 9rem);
+
+    .button {
+      border-radius: 0;
+      border: none;
+      padding: 0;
+      outline: none;
+      font-size: 3rem;
+      font-family: inherit;
+      @extend %align-center;
+
+      i {
+        font-size: 1.7rem;
+      }
+
+      &--operator {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:active {
+          background-color: darken($color-primary, 5%);
+        }
+      }
+
+      &--modify {
+        background-color: $color-primary-light;
+        color: $color-white;
+        &:active {
+          background-color: darken($color-primary-light, 6%);
+        }
+      }
+
+      &--equals {
+        background-color: $color-secondary;
+        color: $color-white;
+        grid-column: 4 / 5;
+        grid-row: 4 / 6;
+        &:active {
+          background-color: darken($color-secondary, 7%);
+        }
+      }
+
+      &--number {
+        background-color: $color-white;
+        &:active {
+          background-color: darken($color-white, 4%);
+        }
+
+        &--0 {
+          grid-column: 1 / 3;
+        }
+      }
+    }
+  }
+}

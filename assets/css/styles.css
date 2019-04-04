@@ -1,3 +1,114 @@
+.calculator__body .button, body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+body {
+  background-image: linear-gradient(to bottom right, rgba(128, 249, 255, 0.33), rgba(81, 198, 205, 0.7));
+}
+
+.calculator {
+  border-radius: 1.5rem;
+}
+
+.calculator {
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.11);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.calculator {
+  overflow: hidden;
+  background-color: #ffffff;
+  min-width: 36rem;
+}
+.calculator__display {
+  padding: 2.5rem;
+}
+.calculator__display--secondary {
+  color: #999999;
+  display: block;
+  font-size: 2rem;
+  text-align: right;
+}
+.calculator__display--main {
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+.calculator__display--main i {
+  color: #999999;
+  font-size: 2rem;
+}
+.calculator__display--main .results {
+  text-align: right;
+  flex-grow: 1;
+  font-size: 5rem;
+}
+.calculator__body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 9rem);
+}
+.calculator__body .button {
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  outline: none;
+  font-size: 3rem;
+  font-family: inherit;
+}
+.calculator__body .button i {
+  font-size: 1.7rem;
+}
+.calculator__body .button--operator {
+  background-color: #0c9fa7;
+  color: #ffffff;
+}
+.calculator__body .button--operator:active {
+  background-color: #0a888f;
+}
+.calculator__body .button--modify {
+  background-color: #81dadf;
+  color: #ffffff;
+}
+.calculator__body .button--modify:active {
+  background-color: #69d3d8;
+}
+.calculator__body .button--equals {
+  background-color: #e46b1b;
+  color: #ffffff;
+  grid-column: 4/5;
+  grid-row: 4/6;
+}
+.calculator__body .button--equals:active {
+  background-color: #c45c17;
+}
+.calculator__body .button--number {
+  background-color: #ffffff;
+}
+.calculator__body .button--number:active {
+  background-color: whitesmoke;
+}
+.calculator__body .button--number--0 {
+  grid-column: 1/3;
+}
 
 /*# sourceMappingURL=styles.css.map */
