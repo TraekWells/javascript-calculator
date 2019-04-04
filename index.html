@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Javascript Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="calculator">
+      <div class="calculator__display">
+        <div
+          class="calculator__display--preview js-calculator__display--preview"
+        ></div>
+        <div class="calculator__display--results"></div>
+      </div>
+      <div class="calculator__body">
+        <div class="calculator__body--operators">
+          <button class="button operator operator--plus">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button class="button operator js-operator--minus">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>
