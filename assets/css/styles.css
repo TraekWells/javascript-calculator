@@ -88,6 +88,18 @@ body {
 .calculator__body .button--operator:active {
   background-color: #0a848a;
 }
+.calculator__body .button--operator--equals {
+  background-color: #e46b1b;
+  color: #ffffff;
+  grid-column: 4/5;
+  grid-row: 4/6;
+}
+.calculator__body .button--operator--equals:hover {
+  background-color: #d76519;
+}
+.calculator__body .button--operator--equals:active {
+  background-color: #c05a16;
+}
 .calculator__body .button--modify {
   background-color: #81dadf;
   color: #ffffff;
@@ -97,18 +109,6 @@ body {
 }
 .calculator__body .button--modify:active {
   background-color: #65d2d7;
-}
-.calculator__body .button--equals {
-  background-color: #e46b1b;
-  color: #ffffff;
-  grid-column: 4/5;
-  grid-row: 4/6;
-}
-.calculator__body .button--equals:hover {
-  background-color: #d76519;
-}
-.calculator__body .button--equals:active {
-  background-color: #c05a16;
 }
 .calculator__body .button--number {
   background-color: #ffffff;
