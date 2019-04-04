@@ -109,16 +109,24 @@ body {
         background-color: $color-primary;
         color: $color-white;
 
+        &:hover {
+          background-color: darken($color-primary, 2%);
+        }
+
         &:active {
-          background-color: darken($color-primary, 5%);
+          background-color: darken($color-primary, 6%);
         }
       }
 
       &--modify {
         background-color: $color-primary-light;
         color: $color-white;
+
+        &:hover {
+          background-color: darken($color-primary-light, 4%);
+        }
         &:active {
-          background-color: darken($color-primary-light, 6%);
+          background-color: darken($color-primary-light, 7%);
         }
       }
 
@@ -127,15 +135,24 @@ body {
         color: $color-white;
         grid-column: 4 / 5;
         grid-row: 4 / 6;
+
+        &:hover {
+          background-color: darken($color-secondary, 3%);
+        }
+
         &:active {
-          background-color: darken($color-secondary, 7%);
+          background-color: darken($color-secondary, 8%);
         }
       }
 
       &--number {
         background-color: $color-white;
-        &:active {
+
+        &:hover {
           background-color: darken($color-white, 4%);
+        }
+        &:active {
+          background-color: darken($color-white, 8%);
         }
 
         &--0 {
