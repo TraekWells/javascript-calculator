@@ -61,18 +61,21 @@ body {
 
   &__display {
     padding: 2.5rem;
+    height: 14.1rem;
 
     &--secondary {
       color: $color-text-light;
       display: block;
       font-size: 2rem;
       text-align: right;
+      height: 2.6rem;
     }
 
     &--main {
       color: $color-text;
       display: flex;
       align-items: center;
+      height: 6.5rem;
 
       i {
         color: $color-text-light;

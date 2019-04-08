@@ -41,17 +41,20 @@ body {
 }
 .calculator__display {
   padding: 2.5rem;
+  height: 14.1rem;
 }
 .calculator__display--secondary {
   color: #999999;
   display: block;
   font-size: 2rem;
   text-align: right;
+  height: 2.6rem;
 }
 .calculator__display--main {
   color: #333333;
   display: flex;
   align-items: center;
+  height: 6.5rem;
 }
 .calculator__display--main i {
   color: #999999;
