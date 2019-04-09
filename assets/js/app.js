@@ -13,6 +13,10 @@ const operatorDivide = document.querySelector(".js-operator--plus");
 const operatorEquals = document.querySelector(".js-operator--equals");
 const calculatorNumbers = document.querySelectorAll(".button--number");
 
+let firstOperand;
+let secondOperand;
+let operator;
+
 let userInput = 0;
 
 // Functions
@@ -42,6 +46,7 @@ operatorPlus.addEventListener("click", function () {
 
 operatorEquals.addEventListener("click", function () {
   displayMain.textContent = parseFloat(userInput);
+  displayEquals.style.display = "block";
 });
 
 calculatorNumbers.forEach(function (num) {
