@@ -13,64 +13,100 @@ const operatorDivide = document.querySelector(".js-operator--divide");
 const operatorEquals = document.querySelector(".js-operator--equals");
 const calculatorNumbers = document.querySelectorAll(".button--number");
 
-let firstOperand;
-let secondOperand;
-let operator;
-
 let userInput;
-// let result;
 
 // Event Listeners
 modifyClear.addEventListener("click", init);
 
-operatorPlus.addEventListener("click", function() {
+modifyBack.addEventListener("click", function () {
+  userInput = userInput.slice(0, userInput.length - 1);
+  displayUserInput();
+});
+
+operatorPlus.addEventListener("click", function () {
   userInput += "+";
   displayUserInput();
 });
 
-operatorMinus.addEventListener("click", function() {
+operatorMinus.addEventListener("click", function () {
   userInput += "-";
   displayUserInput();
 });
 
-operatorMultiply.addEventListener("click", function() {
+operatorMultiply.addEventListener("click", function () {
   userInput += "*";
   displayUserInput();
 });
 
-operatorDivide.addEventListener("click", function() {
+operatorDivide.addEventListener("click", function () {
   userInput += "/";
   displayUserInput();
 });
 
-operatorEquals.addEventListener("click", function() {
-  displayMain.textContent = eval(userInput);
-  displayEquals.style.display = "block";
+operatorEquals.addEventListener("click", calculateInput);
+
+calculatorNumbers.forEach(function (num) {
+  num.addEventListener("click", function (e) {
+    userInput += e.target.textContent;
+    displayUserInput();
+  });
 });
 
-calculatorNumbers.forEach(function(num) {
-  num.addEventListener("click", appendUserInput);
-});
+document.addEventListener('keydown', function (e) {
+  e.preventDefault();
+  let keyPressed = e.key;
+  switch (keyPressed) {
+    case "0":
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+    case "7":
+    case "8":
+    case "9":
+    case "+":
+    case "-":
+    case "/":
+    case "*":
+      userInput += keyPressed;
+      displayUserInput();
+      break;
+    case "Enter":
+      calculateInput();
+      break;
+    case "Delete":
+    case "Backspace":
+      userInput = userInput.slice(0, userInput.length - 1);
+      displayUserInput();
+      break;
+    case "Escape":
+      init();
+      break;
+  }
+})
 
 init();
 
 // Functions
-function appendUserInput() {
-  userInput += this.textContent;
-  displayUserInput();
-}
-
 function displayUserInput() {
-  if (displayMain.textContent === 0) {
+  if (displayEquals.style.display === "none") {
     displayMain.textContent = userInput;
   } else {
     displaySecondary.textContent = userInput;
   }
 }
 
+function calculateInput() {
+  displaySecondary.textContent = displayMain.textContent;
+  displayMain.textContent = eval(userInput);
+  displayEquals.style.display = "block";
+}
+
 function init() {
   displayEquals.style.display = "none";
   displaySecondary.textContent = "";
-  displayMain.textContent = "0";
   userInput = "";
+  displayMain.textContent = 0;
 }
