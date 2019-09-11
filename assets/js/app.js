@@ -11,7 +11,7 @@
 
 */
 
-(function() {
+(function () {
   // Variables
   const displaySecondary = document.querySelector(
     ".js-calculator__display--secondary"
@@ -32,41 +32,41 @@
   // Event Listeners
   modifyClear.addEventListener("click", init);
 
-  modifyBack.addEventListener("click", function() {
+  modifyBack.addEventListener("click", function () {
     userInput = userInput.slice(0, userInput.length - 1);
     displayUserInput();
   });
 
-  operatorPlus.addEventListener("click", function() {
+  operatorPlus.addEventListener("click", function () {
     userInput += "+";
     displayUserInput();
   });
 
-  operatorMinus.addEventListener("click", function() {
+  operatorMinus.addEventListener("click", function () {
     userInput += "-";
     displayUserInput();
   });
 
-  operatorMultiply.addEventListener("click", function() {
+  operatorMultiply.addEventListener("click", function () {
     userInput += "*";
     displayUserInput();
   });
 
-  operatorDivide.addEventListener("click", function() {
+  operatorDivide.addEventListener("click", function () {
     userInput += "/";
     displayUserInput();
   });
 
   operatorEquals.addEventListener("click", calculateInput);
 
-  calculatorNumbers.forEach(function(num) {
-    num.addEventListener("click", function(e) {
+  calculatorNumbers.forEach(function (num) {
+    num.addEventListener("click", function (e) {
       userInput += e.target.textContent;
       displayUserInput();
     });
   });
 
-  document.addEventListener("keydown", function(e) {
+  document.addEventListener("keydown", function (e) {
     e.preventDefault();
     let keyPressed = e.key;
     switch (keyPressed) {
@@ -106,22 +106,26 @@
   // Functions
   function displayUserInput() {
     if (displaySecondary.textContent !== "") {
-      init();
+      displayMain.textContent = userInput;
+      if (displayEquals.style.display === "block") {
+        displayEquals.style.display === "none";
+      }
     } else {
       displayMain.textContent = userInput;
     }
   }
 
   function calculateInput() {
-    displaySecondary.textContent = displayMain.textContent;
+    displaySecondary.textContent = userInput;
     displayMain.textContent = eval(userInput);
     displayEquals.style.display = "block";
+    userInput = "";
   }
 
   function init() {
     displayEquals.style.display = "none";
     displaySecondary.textContent = "";
     userInput = "";
-    displayMain.textContent = 0;
+    displayMain.textContent = "0";
   }
 })();
